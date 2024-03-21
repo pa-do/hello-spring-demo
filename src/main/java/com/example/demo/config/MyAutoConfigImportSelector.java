@@ -5,7 +5,6 @@ import org.springframework.context.annotation.DeferredImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MyAutoConfigImportSelector implements DeferredImportSelector {
@@ -19,9 +18,7 @@ public class MyAutoConfigImportSelector implements DeferredImportSelector {
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
         List<String> autoConfigs = new ArrayList<>();
 
-        ImportCandidates.load(MyAutoConfiguration.class, classLoader).forEach(candidate ->
-                autoConfigs.add(candidate)
-        );
+        ImportCandidates.load(MyAutoConfiguration.class, classLoader).forEach(autoConfigs::add);
 
         return autoConfigs.toArray(new String[0]);
     }

@@ -1,4 +1,4 @@
-package config.autoconfig;
+package com.example.demo.config.autoconfig;
 
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;

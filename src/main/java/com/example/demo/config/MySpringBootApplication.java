@@ -1,6 +1,5 @@
-package com.example.demo;
+package com.example.demo.config;
 
-import config.EnableMyAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 

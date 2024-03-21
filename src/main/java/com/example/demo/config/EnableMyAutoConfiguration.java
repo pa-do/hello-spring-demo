@@ -1,7 +1,7 @@
-package config;
+package com.example.demo.config;
 
-import config.autoconfig.DispatcherServletConfig;
-import config.autoconfig.TomcatWebServerConfig;
+import com.example.demo.config.autoconfig.DispatcherServletConfig;
+import com.example.demo.config.autoconfig.TomcatWebServerConfig;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;

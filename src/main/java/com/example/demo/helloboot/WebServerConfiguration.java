@@ -1,16 +1,19 @@
 package com.example.demo.helloboot;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 
 @Configuration(proxyBeanMethods = false)
 public class WebServerConfiguration {
-    @Bean ServletWebServerFactory customerWebServerFactory(Environment env) {
+    @Value("${contextPath}")
+    String contextPath;
+
+    @Bean ServletWebServerFactory customerWebServerFactory() {
         TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
-        serverFactory.setContextPath(env.getProperty("contextPath"));
+        serverFactory.setContextPath(this.contextPath);
         return serverFactory;
     }
 }

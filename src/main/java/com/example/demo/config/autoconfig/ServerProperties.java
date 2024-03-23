@@ -1,5 +1,8 @@
 package com.example.demo.config.autoconfig;
 
+import com.example.demo.config.MyConfigurationProperties;
+
+@MyConfigurationProperties
 public class ServerProperties {
     private String contextPath;
 

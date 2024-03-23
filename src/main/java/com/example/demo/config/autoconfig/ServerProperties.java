@@ -2,7 +2,7 @@ package com.example.demo.config.autoconfig;
 
 import com.example.demo.config.MyConfigurationProperties;
 
-@MyConfigurationProperties
+@MyConfigurationProperties(prefix = "server")
 public class ServerProperties {
     private String contextPath;
 

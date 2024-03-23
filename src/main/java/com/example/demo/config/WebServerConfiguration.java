@@ -1,14 +1,13 @@
-package com.example.demo.helloboot;
+package com.example.demo.config;
 
 import com.example.demo.config.autoconfig.ServerProperties;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 
 @Configuration(proxyBeanMethods = false)
-@Import(ServerProperties.class)
+@EnableMyConfigurationProperties(ServerProperties.class)
 public class WebServerConfiguration {
 
     @Bean ServletWebServerFactory customerWebServerFactory(ServerProperties properties) {

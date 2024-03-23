@@ -8,12 +8,17 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration(proxyBeanMethods = false)
 public class WebServerConfiguration {
-    @Value("${contextPath}")
+    @Value("${contextPath:}")
     String contextPath;
+
+    @Value("${port:8080}")
+    int port;
 
     @Bean ServletWebServerFactory customerWebServerFactory() {
         TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
+
         serverFactory.setContextPath(this.contextPath);
+        serverFactory.setPort(port);
         return serverFactory;
     }
 }

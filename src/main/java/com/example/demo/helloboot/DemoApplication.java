@@ -1,11 +1,11 @@
 package com.example.demo.helloboot;
 
-import com.example.demo.config.MySpringBootApplication;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-@MySpringBootApplication
+@SpringBootApplication
 public class DemoApplication {
     private final JdbcTemplate jdbcTemplate;
 
